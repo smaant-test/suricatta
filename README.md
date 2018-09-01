@@ -1,4 +1,4 @@
-# suricatta #
+ # suricatta #
 
 [![Travis Badge](https://img.shields.io/travis/funcool/suricatta.svg?style=flat)](https://travis-ci.org/funcool/suricatta "Travis Badge")
 
