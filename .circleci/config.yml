@@ -10,42 +10,43 @@ jobs:
 
     working_directory: ~/suricatta
     steps:
-      - checkout
+      - run: echo YO!
+#       - checkout
 
-      - restore_cache:
-          key: v1-jars-{{ checksum "project.clj" }}
+#       - restore_cache:
+#           key: v1-jars-{{ checksum "project.clj" }}
 
-      - run: lein test-all
+#       - run: lein test-all
 
-      - save_cache:
-          key: v1-jars-{{ checksum "project.clj" }}
-          paths:
-            - ~/.m2
+#       - save_cache:
+#           key: v1-jars-{{ checksum "project.clj" }}
+#           paths:
+#             - ~/.m2
 
-      - persist_to_workspace:
-          root: ~/suricatta
-          paths:
-            - project.clj
+#       - persist_to_workspace:
+#           root: ~/suricatta
+#           paths:
+#             - project.clj
 
-      - store_artifacts:
-          path: test2junit
+#       - store_artifacts:
+#           path: test2junit
 
-      - store_test_results:
-          path: test2junit/xml
+#       - store_test_results:
+#           path: test2junit/xml
 
   deploy:
     docker:
       - image: alpine:3.4
     working_directory: /
     steps:
-      - run: apk update && apk add ca-certificates
+#       - run: apk update && apk add ca-certificates
 
-      - attach_workspace:
-          at: ~/suricatta
+#       - attach_workspace:
+#           at: ~/suricatta
 
-      - run: ls ~/suricatta
+#       - run: ls ~/suricatta
 
-      - run: cat ~/suricatta/project.clj
+#       - run: cat ~/suricatta/project.clj
       
       - run: echo YAY
 
