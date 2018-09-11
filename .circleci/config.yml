@@ -10,6 +10,7 @@ jobs:
 
     working_directory: ~/suricatta
     steps:
+      - run: env
       - run: echo YO!
 #       - checkout
 
@@ -55,6 +56,8 @@ workflows:
   btd:
     jobs:
       - build
+          context:
+            - xyz
       - deploy:
           requires:
             - build
