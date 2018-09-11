@@ -55,7 +55,7 @@ workflows:
   version: 2
   btd:
     jobs:
-      - build
+      - build:
           context: xyz
       - deploy:
           requires:
