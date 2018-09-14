@@ -56,7 +56,7 @@ workflows:
   btd:
     jobs:
       - build:
-          context: xyz
+          context: test-context
       - deploy:
           requires:
             - build
