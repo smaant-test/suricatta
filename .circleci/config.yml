@@ -56,7 +56,7 @@ workflows:
   btd:
     jobs:
       - build:
-          context: test-context
+          context: org-global
       - deploy:
           requires:
             - build
