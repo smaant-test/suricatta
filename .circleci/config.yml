@@ -40,7 +40,6 @@ jobs:
       - image: alpine:3.4
     working_directory: /
     steps:
-      - run: xxxx123
 #       - run: apk update && apk add ca-certificates
 
 #       - attach_workspace:
